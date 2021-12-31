@@ -13,7 +13,7 @@
   }
 
   @include respond(phone) {
-    top: 5rem;
+    top: 10rem;
   }
 
   &__heading {

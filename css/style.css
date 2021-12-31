@@ -387,7 +387,7 @@
       margin-top: 0; } }
   @media (max-width: 37.5em) {
     .loans {
-      top: 5rem; } }
+      top: 10rem; } }
   .loans__heading {
     font-size: 4.5rem;
     font-weight: 400;
