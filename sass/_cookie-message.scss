@@ -1,0 +1,65 @@
+.cookie-message {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 7rem;
+  background-color: $light-grayish-blue;
+  z-index: 15;
+  transition: 0.7s;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+
+  @include respond(tab-land) {
+    height: 9rem;
+  }
+
+  @include respond(phone) {
+    display: none;
+  }
+
+  &.active {
+    bottom: 0;
+  }
+
+  span {
+    font-weight: 800;
+  }
+
+  &__paragraph {
+    width: 80%;
+    padding: 1.5rem 4rem;
+    // color: $white;
+
+    @include respond(tab-port) {
+      padding: 1.5rem 2rem;
+    }
+  }
+
+  &__btn-container {
+    //margin: 1rem 7rem;
+    position: relative;
+    width: 20%;
+    padding: 0 1.5rem;
+  }
+
+  &__btn {
+    background-color: $bright-cyan;
+    padding: 0.5rem 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: $white;
+    border-radius: 10rem;
+    transition: all 0.4s;
+
+    &:hover {
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    }
+  }
+}

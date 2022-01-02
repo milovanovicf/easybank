@@ -14,6 +14,19 @@ const swap = document.querySelector(".cur-converter__btn");
 
 const timeEl = document.querySelector(".cur-converter__paragraph");
 
+const cookieMsg = document.querySelector(".cookie-message");
+const cookieBtn = document.querySelector(".cookie-message__btn-container");
+
+const closeBtn = document.querySelector(".modal__btn");
+const navBtn = document.querySelector(".nav__btn");
+const headerBtn = document.querySelector(".header__btn");
+const footerBtn = document.querySelector(".btn");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+
+const btns = [navBtn, headerBtn, footerBtn];
+const closeBtns = [closeBtn, overlay];
+
 const calculate = function () {
   const currencyOneValue = currencyOne.value;
   const currencyTwoValue = currencyTwo.value;
@@ -52,4 +65,31 @@ calculate();
 menu.addEventListener("click", function () {
   menu.classList.toggle("active");
   menuLinks.classList.toggle("active");
+});
+
+cookieBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  cookieMsg.classList.remove("active");
+});
+
+setTimeout(function () {
+  cookieMsg.classList.add("active");
+}, 2000);
+
+btns.forEach((el) => {
+  console.log(el);
+  el.addEventListener("click", function (e) {
+    e.preventDefault();
+    modal.classList.add("active");
+    overlay.classList.add("active");
+  });
+});
+
+closeBtns.forEach((el) => {
+  console.log(el);
+  el.addEventListener("click", function (e) {
+    e.preventDefault();
+    modal.classList.remove("active");
+    overlay.classList.remove("active");
+  });
 });
